@@ -28,7 +28,7 @@ with open(csv_file, "r", encoding = "utf_8") as f:
       p.hotkey("command", "v")
       t.sleep(0.2)
 
-      # 選択肢を解答に記入
+      # 選択肢を解答に記入。
       answer_length = len(row[1])
       pyperclip.copy(row[1])
       p.click(150, 425)
@@ -36,12 +36,13 @@ with open(csv_file, "r", encoding = "utf_8") as f:
       p.hotkey("command", "v")
       t.sleep(0.05)
 
-      # 選択肢の自動生成
+      # 選択肢の自動生成。
       p.click(183, 500)
       t.sleep(0.1)
       p.click(335, 620)
       t.sleep(0.25 + 0.08 * answer_length)
 
+      # 解答を正式なものに書き換える。
       if 2 < len(row):
         p.click(87, 422)
         t.sleep(0.01)
@@ -57,7 +58,7 @@ with open(csv_file, "r", encoding = "utf_8") as f:
         p.hotkey("command", "v")
         t.sleep(0.05)
 
-      # 保存ボタン
+      # 保存ボタンを押して保存する(そして、問題一覧へ)。
       p.click(287, 662)
       t.sleep(1.5)
       p.click(353, 603)
