@@ -6,7 +6,8 @@ import time as t
 csv_file = "csv/op.csv"
 start_row = 0
 
-p.click(x01, y01)
+# アプリにフォーカスをあてる。
+p.click(475, 779)
 
 ct = 0
 print("starts")
