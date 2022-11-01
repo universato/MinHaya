@@ -24,11 +24,13 @@ def paste():
     else:
         p.hotkey("command", "v")
 
+print("[INFO] " + csv_file + "の", end="")
+print(str(start_row) + "行目から始めます!")
+
 # アプリにフォーカスをあてる。
 p.click(*xy_create)
 
 ct = 0
-print("starts")
 with open(csv_file, "r", encoding = "utf_8") as f:
     reader = csv.reader(f)
     for row in reader:
