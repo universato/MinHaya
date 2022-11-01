@@ -2,6 +2,7 @@ import csv
 import pyautogui as p
 import pyperclip
 import time as t
+import platform
 
 csv_file = "csv/op.csv"
 start_row = 0
@@ -16,6 +17,12 @@ xy_save    = 285, 652 # 中央の保存ボタン。
 xy_namida  = 88,  447 # 涙吹き出しの形をしたボタン
 xy_select  = 217, 395 # 「すべて選択」ボタン。ただし、「Google」と「Wikipedia」の間。
 xy_cut     = 121, 377 # 「切り取り」ボタンの中央。
+
+def paste():
+    if platform.system() == "Windows":
+        p.hotkey("ctrl", "v")
+    else:
+        p.hotkey("command", "v")
 
 # アプリにフォーカスをあてる。
 p.click(*xy_create)
@@ -38,7 +45,7 @@ with open(csv_file, "r", encoding = "utf_8") as f:
       pyperclip.copy(row[0])
       p.click(*xy_problem)
       t.sleep(0.5)
-      p.hotkey("command", "v")
+      paste()
       t.sleep(0.5)
 
       # 選択肢を解答に記入。
@@ -46,7 +53,7 @@ with open(csv_file, "r", encoding = "utf_8") as f:
       pyperclip.copy(row[1])
       p.click(*xy_answer)
       t.sleep(0.05)
-      p.hotkey("command", "v")
+      paste()
       t.sleep(0.05)
 
       # 選択肢の自動生成。
@@ -65,7 +72,7 @@ with open(csv_file, "r", encoding = "utf_8") as f:
         p.click(*xy_select)
         p.click(*xy_cut)
         pyperclip.copy(row[2])
-        p.hotkey("command", "v")
+        paste()
 
       # 保存ボタンを押して保存する(そして、問題一覧へ)。
       p.click(*xy_save)
