@@ -4,7 +4,7 @@ import pyperclip
 import time as t
 import platform
 
-csv_file = "csv/op.csv"
+csv_file = "csv/test.csv"
 start_row = 0
 
 xy_create  = 475, 779 # 問題作成一覧の、右下の丸い問題作成への遷移ボタンの中央
