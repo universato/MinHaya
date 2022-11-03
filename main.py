@@ -7,10 +7,21 @@ import platform
 csv_file = "csv/test.csv"
 start_row = 0
 
+problem_column = 0
+answer_column = 2
+choice_column = 1
+
+xn_l, yn_t = 51.3, 63
+xn_r, yn_b = 510, 880.5
+
+# アプリ画面の左上、右下。NaxPlayer画面の中のアプリ画面。
+xl, yt = 50, 64
+xr, yb = 523, 890
+
 xy_create  = 475, 779 # 問題作成一覧の、右下の丸い問題作成への遷移ボタンの中央
 xy_problem = 279, 256 # 「問題文」欄の中央。ズレても余裕あり。
 xy_answer  = 88,  422 # 「解答」欄。1文字目と2文字目の間。
-# xy_auto    = 194, 499 # 選択肢の「自動作成」ボタン。少しシビア。
+xy_auto    = 194, 499 # 選択肢の「自動作成」ボタン。少しシビア。
 xy_ok      = 373, 616 # ダイアログのOKボタン。中央から少し右にずらした。
 xy_save    = 285, 652 # 中央の保存ボタン。
 
@@ -19,9 +30,21 @@ xy_namida  = 88,  447 # 涙吹き出しの形をしたボタン
 xy_select  = 217, 395 # 「すべて選択」ボタン。ただし、「Google」と「Wikipedia」の間。
 xy_cut     = 121, 377 # 「切り取り」ボタンの中央。
 
-problem_column = 0
-answer_column = 2
-choice_column = 1
+def transform(xy):
+    x, y = xy
+    xn = (x - xl) * (xn_r - xn_l) / (xr - xl) + xn_l
+    yn = (y - yt) * (yn_b - yn_t) / (yb - yt) + yn_t
+    return (xn, yn)
+
+xy_create  = transform(xy_create)
+xy_problem = transform(xy_problem)
+xy_answer  = transform(xy_answer)
+xy_auto    = transform(xy_auto)
+xy_ok      = transform(xy_ok)
+xy_save    = transform(xy_save)
+xy_namida  = transform(xy_namida)
+xy_select  = transform(xy_select)
+xy_cut     = transform(xy_cut)
 
 def paste():
     if platform.system() == "Windows":
