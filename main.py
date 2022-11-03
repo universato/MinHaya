@@ -4,7 +4,7 @@ import pyperclip
 import time as t
 import platform
 
-csv_file = "csv/test.csv"
+csv_file = "test.csv"
 start_row = 0
 
 problem_column = 0
