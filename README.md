@@ -1,8 +1,8 @@
-# みんはや
+# MinHaya
 
-CSVファイル形式の問題セットを、みんはやに自動で問題を追加するPythonプログラム。 
+CSVファイル形式の問題セットを、『みんなで早押しクイズ』(以下、みんはや)に自動で問題を追加するPythonプログラム。 
 
-## 検証バージョン
+## 検証バージョン Version
 
 みんはや： 4.0.9
 Python    3.10.1 [Clang 12.0.5]
@@ -15,39 +15,41 @@ platform  1.0.8
 右上のハンバーガーメニューから「タイトルへ」で戻ることも可能。  
 
 Python関連は、以下の方法で確認できる。
-> python version.py
 
+```console
+$ python version.py
+```
 
-## 使い方
+## 使い方 How to use
 
-1. パソコンで[NoxPlayer](https://www.bignox.com/)などのエミュレータを通して、｢みんはや｣を起動する。
+1. パソコンで[NoxPlayer](https://www.bignox.com/)などのエミュレータを通して、｢みんはや｣を起動する。  
 
-2. `main.py`の座標を書き換える。
+2. `main.py`の座標を書き換える。  
 
-具体的には`cursor.py`を実行して、実際にみんはやを操作し、パソコン上の座標を把握する。
+具体的には`cursor.py`を実行して、実際にみんはやを操作し、パソコン上の座標を把握する。  
 
-【注意!!】プログラムを始める前に、Pythonプログラムの停止方法を覚える。
-- Mac: `control + c`で、KeyboardInterruptでPythonで停止させる。
-- Mac: `control + z`で、zshを通してプログラムを停止させる
+【注意!!】プログラムを始める前に、Pythonプログラムの停止方法を覚える。  
+- Mac: `control + c`で、KeyboardInterruptでPythonで停止させる。  
+- Mac: `control + z`で、zshを通してプログラムを停止させる  
 
-座標を把握したら、`main.py`の座標を書き換える。
+座標を把握したら、`main.py`の座標を書き換える。  
 
 3. `main.py`(`readcsv.py`)を実行して、CSVファイルから問題リストを入力していく。  
 
 > python main.py
 
-`start_row`は、入力を始める行。 
+`start_row`は、入力を始める行。  
 
 プログラムを始める前に、停止させる方法を覚える。もしくは、問題数が少ない状態でやる。
 - Mac: `control + c`で、KeyboardInterruptでPythonで停止させる。
 - Mac: `control + z`で、zshを通してプログラムを停止させる
 
 念の為、先に問題投稿をしておいた方が良い。  
-誤った問題を投稿する可能性があるため。
+誤った問題を投稿する可能性があるため。  
 
 
 
-## 注意事項
+## 注意事項 Notes
 
 main.pyを使う際の注意事項：  
 画面を拡大して左端に画面を寄せるなど、位置を固定させる。  
@@ -56,8 +58,11 @@ main.pyを使う際の注意事項：
 
 ## 参考
 
-クイズアプリ「みんはや」にたくさんの作った問題セットを(半)自動で追加させる  
-https://qiita.com/TEA437354/items/0b79b84fb323844b4dd8
+- クイズアプリ「みんはや」にたくさんの作った問題セットを(半)自動で追加させる  
+  https://qiita.com/TEA437354/items/0b79b84fb323844b4dd8
+
+- Qiita: Pythonでクリックしたスクリーン上の座標を求める方法のメモ(pynput)
+  https://qiita.com/universato/items/11bfac1d522c1c1ec2a3
 
 ## main.pyの見方
 
@@ -73,7 +78,7 @@ WindowsとMacでペーストのショートカットが異なる。
 なお、Macの`platform.system()`は`"Darwin"`である。
 
 
-##
+## 備考
 
 「解答」欄で、`enter`を押すと、「自動生成」ボタンにフォーカスする。
 そのまま、`enter`を押すと、「自動生成」のダイアログがでる。
