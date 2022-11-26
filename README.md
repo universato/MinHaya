@@ -4,12 +4,12 @@ CSVファイル形式の問題セットを、『みんなで早押しクイズ�
 
 ## 検証バージョン Version
 
-みんはや： 4.0.9
-Python    3.10.1 [Clang 12.0.5]
-csv       1.0
-pyautogui 0.9.53
-pyperclip 1.8.2
-platform  1.0.8
+- みんはや： 4.0.9
+- Python    3.10.1 [Clang 12.0.5]
+- csv       1.0
+- pyautogui 0.9.53
+- pyperclip 1.8.2
+- platform  1.0.8
 
 みんはやのバージョンは、最初のタイトルページで確認する。  
 右上のハンバーガーメニューから「タイトルへ」で戻ることも可能。  
@@ -74,20 +74,20 @@ def paste():
     else:
         p.hotkey("command", "v")
 ```
-WindowsとMacでペーストのショートカットが異なる。
-なお、Macの`platform.system()`は`"Darwin"`である。
+WindowsとMacでペーストのショートカットが異なる。  
+なお、Macの`platform.system()`は`"Darwin"`である。  
 
 
 ## 備考
 
-「解答」欄で、`enter`を押すと、「自動生成」ボタンにフォーカスする。
-そのまま、`enter`を押すと、「自動生成」のダイアログがでる。
+「解答」欄で、`enter`を押すと、「自動生成」ボタンにフォーカスする。  
+そのまま、`enter`を押すと、「自動生成」のダイアログがでる。  
 
-自動生成のボタンのカーソル位置を決めなくていいので、楽そう。
+自動生成のボタンのカーソル位置を決めなくていいので、楽そう。  
 
 ## cursor.pyの見方
 
-【注意!!】プログラムを始める前に、Pythonプログラムの停止方法を覚える。
+【注意!!】プログラムを始める前に、Pythonプログラムの停止方法を覚える。  
 - Mac: `control + c`で、KeyboardInterruptでPythonで停止させる。
 - Mac: `control + z`で、zshを通してプログラムを停止させる
 
